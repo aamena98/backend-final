@@ -38,6 +38,14 @@ var student={
     getStudentByUserIdforprofilepic:function(fk_u_id,callback)
     {
         return db.query('select * from student_tbl where fk_u_id=?',[fk_u_id],callback);
+    },
+    updatePassword:function(item,fk_u_id,callback)
+    {
+            return db.query('update student_tbl set s_password=? where fk_u_id=?',[item.s_password,fk_u_id],callback);
+    },
+    viewStudentsOnAdmin:function(s_class,s_div,callback)
+    {
+        return db.query('select * from student_tbl where s_class=? and s_div=?',[s_class,s_div],callback);
     }
 };
 

@@ -45,6 +45,10 @@ var s_attendance={
     getAttendancebyUserid:function(fk_u_id,callback)
     {
         db.query('select * from stu_attendance_tbl where fk_u_id=?',[fk_u_id],callback);
+    },
+    getAttendanceCount(fk_u_id,callback)
+    {
+        db.query('SELECT COUNT(s_a_status) from stu_attendance_tbl where fk_u_id=?',[fk_u_id],callback);
     }
 };
 module.exports=s_attendance;

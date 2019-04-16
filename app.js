@@ -20,7 +20,7 @@ var classTeacher1=require('./routes/classTeacher_route1');
 var div=require('./routes/division_routes');
 var result=require('./routes/result_routes1');
 var studentclass=require('./routes/class_routes');
-var result1=require('./routes/result_routes1');
+var result1=require('./routes/result_routes');
 var interact=require('./routes/PT_interaction_routes');
 var s_attendance1=require('./routes/Teacher_Dashboard_Routes/s_attendance_route1');
 var t_interact=require('./routes/Teacher_Dashboard_Routes/Teacher_interaction_routes');
@@ -36,6 +36,16 @@ var leave5=require('./routes/LeaveRoute5');
 var reply=require('./routes/reply_routes');
 var s_interact=require('./routes/StudentInteractionRoutes');
 var viewedReply=require('./routes/studentReplyRoutes');
+var login=require('./routes/LoginRoutes/login_routes');
+var timetable=require('./routes/studentTimeatbelroutes');
+var notes=require('./routes/notes_routes');
+var unotes=require('./routes/update_notes_routes');
+var hw=require('./routes/homeWork_routes');
+var emailv=require('./routes/email_varify_route');
+var updatepass=require('./routes/updatePassword_Routes');
+var userUpdate=require('./routes/user_route1');
+var addhw=require('./routes/add_homework_route');
+var viewonad=require('./routes/studentviewAdmin_routes');
 var app = express();
 
 // view engine setup
@@ -81,6 +91,15 @@ app.use('/replyDisplay',reply);
 app.use('/studentInteract',s_interact);
 app.use('/viewedMessages',t_interact2);
 app.use('/viewedReply',viewedReply);
+app.use('/timeTable',timetable);
+app.use('/notesAddGetDelete',notes);
+app.use('/updateNotes',unotes);
+app.use('/homework',hw);
+app.use('/emailvarify',emailv);
+app.use('/updatepass',updatepass);
+app.use('/userupdate',userUpdate);
+app.use('/addhw',addhw);
+app.use('/viewstuonadmin',viewonad);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

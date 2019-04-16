@@ -58,7 +58,19 @@ router.delete('/:user_id',function(req,res,next){
               });
           });
           
-          
+
+          router.get('/:id',function(req,res,next){
+            user.getUserById(req.params.id,function(err,rows){
+                if(err)
+                {
+                   res.json(err);
+                }
+                else
+                {
+                    res.json(rows);
+                }
+            });
+        });          
 
 
 module.exports=router;
