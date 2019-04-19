@@ -46,6 +46,10 @@ var updatepass=require('./routes/updatePassword_Routes');
 var userUpdate=require('./routes/user_route1');
 var addhw=require('./routes/add_homework_route');
 var viewonad=require('./routes/studentviewAdmin_routes');
+var remark=require('./routes/remark_routes');
+var remark1=require('./routes/remark_routes1');
+var leaveStu1=require('./routes/stuLeave_routes');
+var leaveStu2=require('./routes/stuLeave_routes1');
 var app = express();
 
 // view engine setup
@@ -100,6 +104,11 @@ app.use('/updatepass',updatepass);
 app.use('/userupdate',userUpdate);
 app.use('/addhw',addhw);
 app.use('/viewstuonadmin',viewonad);
+app.use('/remark',remark);
+app.use('/viewremark',remark1);
+app.use('/acceptstuleave',leaveStu1);
+app.use('/rejectstuleave',leaveStu1);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

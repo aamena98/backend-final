@@ -42,6 +42,14 @@ var leave={
     getAllRejected:function(fk_t_id,callback)
     {
         db.query('select s.*,l.* from student_tbl s,leave_tbl l where s.fk_u_id=l.fk_u_id and l.l_status=? and l.fk_t_number=?',["reject",fk_t_id],callback);        
+    },
+    getAcceptedLeavesforStudent:function(fk_u_id,callback)
+    {
+        db.query('select * from leave_tbl where fk_u_id=? and l_status=?',[fk_u_id,'accept'],callback);
+    },
+    getRejectedLeavesforStudent:function(fk_u_id,callback)
+    {
+        db.query('select * from leave_tbl where fk_u_id=? and l_status=?',[fk_u_id,'reject'],callback);
     }
 };
 

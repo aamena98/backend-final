@@ -48,7 +48,7 @@ var s_attendance={
     },
     getAttendanceCount(fk_u_id,callback)
     {
-        db.query('SELECT COUNT(s_a_status) from stu_attendance_tbl where fk_u_id=?',[fk_u_id],callback);
+        db.query('SELECT COUNT(s_a_status) as stu_attendance from stu_attendance_tbl where fk_u_id=?',[fk_u_id],callback);
     }
 };
 module.exports=s_attendance;
