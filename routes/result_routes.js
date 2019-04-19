@@ -1,4 +1,4 @@
-var result=require('../models/result_model');
+var result=require('../models/result_Model');
 var express=require('express');
 var router=express.Router();
 
