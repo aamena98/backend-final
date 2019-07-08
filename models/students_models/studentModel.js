@@ -6,10 +6,10 @@ var student={
     },
     AddStudent:function(item,filename,callback)
     {
-        db.query('insert into student_tbl values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+        db.query('insert into student_tbl values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
         [item.s_gr_no,item.s_roll_no,item.s_sname,item.s_fname,item.s_lname,item.s_gender,item.s_dob,
             item.s_email,item.s_address,item.s_class,item.s_div,item.s_contactno,item.s_category,
-            item.s_bloodgroup,filename,item.fk_u_id],
+            item.s_bloodgroup,item.s_password,filename,item.fk_u_id],
         callback);
     },
     

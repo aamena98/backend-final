@@ -26,8 +26,11 @@ var classTeacher={
     getUserId:function(c_t_name,callback)
     {
         return db.query('select fk_u_id from teacher_tbl where t_name=?',[c_t_name],callback);
+    },
+    getprofilebyUserId:function(fk_u_id,callback)
+    {
+        return db.query('select t_profilepic from teacher_tbl where fk_u_id=?',[fk_u_id],callback);
     }
-    
 };
 
 module.exports=classTeacher;
